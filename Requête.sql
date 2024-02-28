@@ -50,6 +50,14 @@ INNER JOIN composer ON composer.id_ingredient=ingredient.id_ingredient
 INNER JOIN recettes ON composer.id_recette=recettes.id_recette
 WHERE ingredient.designation='poulet';
 
+SELECT nom_recette
+FROM recettes
+WHERE duree_mn = (
+    SELECT MIN(duree_mn)
+    FROM recettes
+);
+
+
 
 
 
