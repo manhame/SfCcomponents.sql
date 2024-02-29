@@ -51,13 +51,25 @@ HAVING COUNT(composer.id_recette) >= 3;
 INSERT INTO composer (id_recette, id_ingredient, qte)
 VALUES (2, 11, 0.05);
 
-SELECT nom_recette
+SELECT recettes.nom_recette, SUM(composer.qte*ingredient.prix) AS cout_total
 FROM recettes
 INNER JOIN composer ON recettes.id_recette = composer.id_recette
 INNER JOIN ingredient ON composer.id_ingredient = ingredient.id_ingredient
-WHERE prix = (
-SELECT MAX(prix)
-FROM ingredient);
+GROUP BY recettes.id_recette
+ORDER BY cout_total DESC;
+
+SELECT recettes.nom_recette, SUM(composer.qte*ingredient.prix) AS cout_total
+FROM recettes
+INNER JOIN composer ON recettes.id_recette = composer.id_recette
+INNER JOIN ingredient ON composer.id_ingredient = ingredient.id_ingredient
+GROUP BY recettes.id_recette
+HAVING cout_total >= ALL
+	(SELECT SUM(composer.qte*ingredient.prix)
+	FROM recettes
+INNER JOIN composer ON recettes.id_recette = composer.id_recette
+INNER JOIN ingredient ON composer.id_ingredient = ingredient.id_ingredient
+GROUP BY recettes.id_recette);
+
 
 
 

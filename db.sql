@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   PRIMARY KEY (`id_categorie`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table recettes_manuel.categorie : ~3 rows (environ)
+-- Listage des données de la table recettes_manuel.categorie : ~2 rows (environ)
 INSERT INTO `categorie` (`id_categorie`, `nom_categorie`) VALUES
 	(2, 'entree'),
 	(3, 'plat'),
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `composer` (
   CONSTRAINT `FK_composer_recettes` FOREIGN KEY (`id_recette`) REFERENCES `recettes` (`id_recette`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table recettes_manuel.composer : ~49 rows (environ)
+-- Listage des données de la table recettes_manuel.composer : ~74 rows (environ)
 INSERT INTO `composer` (`qte`, `id_recette`, `id_ingredient`) VALUES
 	(0.150000, 1, 6),
 	(0.250000, 1, 7),
@@ -51,9 +51,9 @@ INSERT INTO `composer` (`qte`, `id_recette`, `id_ingredient`) VALUES
 	(5.000000, 1, 4),
 	(5.000000, 1, 5),
 	(0.050000, 1, 3),
-	(1.000000, 1, 1),
-	(0.250000, 2, 10),
-	(0.200000, 2, 9),
+	(0.500000, 1, 1),
+	(0.150000, 2, 10),
+	(0.150000, 2, 9),
 	(1.000000, 2, 2),
 	(1.000000, 1, 2),
 	(1.000000, 3, 12),
@@ -63,20 +63,20 @@ INSERT INTO `composer` (`qte`, `id_recette`, `id_ingredient`) VALUES
 	(0.300000, 5, 15),
 	(0.250000, 5, 18),
 	(0.050000, 5, 17),
-	(1.000000, 7, 22),
+	(0.500000, 7, 22),
 	(0.150000, 7, 24),
 	(0.250000, 7, 23),
-	(1.000000, 6, 19),
+	(0.500000, 6, 19),
 	(1.000000, 6, 20),
 	(5.000000, 6, 21),
 	(0.200000, 8, 25),
 	(0.200000, 8, 32),
-	(2.000000, 8, 26),
+	(0.200000, 8, 26),
 	(3.000000, 8, 27),
 	(0.010000, 8, 33),
-	(1.000000, 9, 28),
+	(0.250000, 9, 28),
 	(0.100000, 9, 29),
-	(0.330000, 10, 30),
+	(0.200000, 10, 30),
 	(0.050000, 10, 31),
 	(0.150000, 10, 25),
 	(6.000000, 9, 27),
@@ -86,14 +86,39 @@ INSERT INTO `composer` (`qte`, `id_recette`, `id_ingredient`) VALUES
 	(0.100000, 4, 3),
 	(0.050000, 4, 52),
 	(0.200000, 4, 51),
-	(0.500000, 4, 50),
+	(0.250000, 4, 50),
 	(0.150000, 11, 6),
 	(0.200000, 11, 14),
 	(0.050000, 11, 37),
 	(0.050000, 2, 11),
 	(0.050000, 2, 11),
 	(0.050000, 2, 11),
-	(0.050000, 2, 11);
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(0.050000, 2, 11),
+	(1.000000, 62, 67);
 
 -- Listage de la structure de table recettes_manuel. ingredient
 CREATE TABLE IF NOT EXISTS `ingredient` (
@@ -102,9 +127,9 @@ CREATE TABLE IF NOT EXISTS `ingredient` (
   `prix` decimal(20,6) DEFAULT '0.000000',
   `um` varchar(50) NOT NULL,
   PRIMARY KEY (`id_ingredient`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table recettes_manuel.ingredient : ~41 rows (environ)
+-- Listage des données de la table recettes_manuel.ingredient : ~44 rows (environ)
 INSERT INTO `ingredient` (`id_ingredient`, `designation`, `prix`, `um`) VALUES
 	(1, 'salade_verte', 1.300000, 'pièce'),
 	(2, 'oignons', 0.300000, 'pièce'),
@@ -117,7 +142,7 @@ INSERT INTO `ingredient` (`id_ingredient`, `designation`, `prix`, `um`) VALUES
 	(9, 'tomates_cerise', 15.000000, 'kg'),
 	(10, 'saumon_fumé', 35.000000, 'kg'),
 	(11, 'citron', 5.000000, 'kg'),
-	(12, 'potimarron', 10.000000, 'pièce'),
+	(12, 'potimarron', 3.000000, 'pièce'),
 	(13, 'poudre_muscade', 0.060000, 'pincée'),
 	(14, 'crême_fraîche', 9.000000, 'kg'),
 	(15, 'risotto', 12.000000, 'kg'),
@@ -132,10 +157,10 @@ INSERT INTO `ingredient` (`id_ingredient`, `designation`, `prix`, `um`) VALUES
 	(24, 'vin_rouge', 5.000000, 'l'),
 	(25, 'chocolat_noir', 6.500000, 'kg'),
 	(26, 'sucre_poudre', 1.800000, 'kg'),
-	(27, 'oeufs', 1.000000, 'unité'),
+	(27, 'oeufs', 0.600000, 'unité'),
 	(28, 'mascarpone', 10.000000, 'kg'),
 	(29, 'amaretto', 40.000000, 'l'),
-	(30, 'glace_vanille', 15.000000, 'l'),
+	(30, 'glace_vanille', 5.000000, 'l'),
 	(31, 'crême_chantilly', 4.000000, 'unité'),
 	(32, 'beurre', 10.000000, 'kg'),
 	(33, 'farine', 4.000000, 'kg'),
@@ -146,7 +171,10 @@ INSERT INTO `ingredient` (`id_ingredient`, `designation`, `prix`, `um`) VALUES
 	(50, 'poulet', 15.000000, 'kg'),
 	(51, 'lait_coco', 18.000000, 'l'),
 	(52, 'curry', 0.050000, 'pincée'),
-	(64, 'poivre', 2.500000, 'cuiller à café');
+	(64, 'poivre', 2.500000, 'cuiller à café'),
+	(65, 'poivre', 2.500000, 'cuiller à café'),
+	(66, 'poivre', 2.500000, 'cuiller à café'),
+	(67, 'test', 16.100000, 'g');
 
 -- Listage de la structure de table recettes_manuel. recettes
 CREATE TABLE IF NOT EXISTS `recettes` (
@@ -158,9 +186,9 @@ CREATE TABLE IF NOT EXISTS `recettes` (
   PRIMARY KEY (`id_recette`),
   KEY `id_categorie` (`id_categorie`),
   CONSTRAINT `FK_recettes_categorie` FOREIGN KEY (`id_categorie`) REFERENCES `categorie` (`id_categorie`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table recettes_manuel.recettes : ~13 rows (environ)
+-- Listage des données de la table recettes_manuel.recettes : ~16 rows (environ)
 INSERT INTO `recettes` (`id_recette`, `nom_recette`, `instructions`, `duree_mn`, `id_categorie`) VALUES
 	(1, 'salade_landaise', 'laver, égouter et préparer salade; émincer oigons, préparer vinaigrette; faire revenir lardons, gésiers et foies de volaille; mélanger le tout', 15, 2),
 	(2, 'salade_nordique', 'laver, égoutter, préparer la salade; émincer les oignons; découper les tomates cerise en deux; préparer la vinaigrette; découper de fines lanières de saumon fumé citronné; mélanger le tout', 10, 2),
@@ -174,7 +202,10 @@ INSERT INTO `recettes` (`id_recette`, `nom_recette`, `instructions`, `duree_mn`,
 	(10, 'dame_blanche', 'prélevez trois boules de glace vanille; faites fondre du chocolat noir; versez sur les boules de glaces; ajouter de la chantilly et saupoudrez de cacao noir', 10, 4),
 	(11, 'pâtes carbonara', 'cuire les pâtes à l eau bouillante selon la durée indiquée sur l emballage;\r\n pendant ce temps émincer un oignon et le faire revenir 5mn avec les lardons; mélanger le tout et agrémenter de crême fraîche et de gruyère rapé', 15, 3),
 	(58, 'tasse_eau_chaude', 'verser de l\'eau chaude dans la tasse', 0, 2),
-	(59, 'pâtes carbonara', 'cuire les pâtes à l eau bouillante selon la durée indiquée sur l emballage;\r\n pendant ce temps émincer un oignon et le faire revenir 5mn avec les lardons; mélanger le tout et agrémenter de crême fraîche et de gruyère rapé', 15, 3);
+	(59, 'pâtes carbonara', 'cuire les pâtes à l eau bouillante selon la durée indiquée sur l emballage;\r\n pendant ce temps émincer un oignon et le faire revenir 5mn avec les lardons; mélanger le tout et agrémenter de crême fraîche et de gruyère rapé', 15, 3),
+	(60, 'pâtes carbonara', 'cuire les pâtes à l eau bouillante selon la durée indiquée sur l emballage;\r\n pendant ce temps émincer un oignon et le faire revenir 5mn avec les lardons; mélanger le tout et agrémenter de crême fraîche et de gruyère rapé', 15, 3),
+	(61, 'pâtes carbonara', 'cuire les pâtes à l eau bouillante selon la durée indiquée sur l emballage;\r\n pendant ce temps émincer un oignon et le faire revenir 5mn avec les lardons; mélanger le tout et agrémenter de crême fraîche et de gruyère rapé', 15, 3),
+	(62, 'test', 'test', 10, 4);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

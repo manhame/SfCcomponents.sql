@@ -35,7 +35,7 @@ INSERT INTO ingredient (designation, um, prix)
 VALUES ('poivre', 'cuiller à café', 2.5);
 
 UPDATE ingredient
-SET prix=10
+SET prix=3
 WHERE id_ingredient=12;
 
 SELECT ingredient.designation, composer.qte, ingredient.prix
